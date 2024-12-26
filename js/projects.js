@@ -6,7 +6,7 @@ class ProjectsCarousel {
             {
                 title: 'React Netflix Clone',
                 description: 'A Netflix clone using React, incorporating modern UI/UX design and integrating TMDB API for dynamic movie data',
-                image: '../Assets/ProjectImages/NetflixReactClone.png',
+                image: 'https://raw.githubusercontent.com/aarjjun/arjunanoop/refs/heads/main/Assets/ProjectImages/NetflixReactClone.png',
                 tech: ['React','JavaScript'],
                 github: 'https://github.com/aarjjun/React-Netflix-clone',
                 demo: ' https://aarjjun.github.io/React-Netflix-clone/'
@@ -14,7 +14,7 @@ class ProjectsCarousel {
             {
                 title: 'Maveli ChatBot',
                 description: 'A simple chatbot built using HTML, CSS, and JavaScript to engage users in interactive conversations',
-                image: '../Assets/ProjectImages/MaveliChatBot.png',
+                image: 'https://raw.githubusercontent.com/aarjjun/arjunanoop/refs/heads/main/Assets/ProjectImages/MaveliChatBot.png',
                 tech: ['HTML','JavaScript','CSS'],
                 github: ' https://github.com/aarjjun/MaveliChatBot',
                 demo: 'https://maveli-chat-bot.netlify.app/'
@@ -22,7 +22,7 @@ class ProjectsCarousel {
             {
                 title: 'Rythmix',
                 description: 'A song-finding web application that helps users discover songs based on partial memories like lyrics, actors, visuals, or other details, powered by the Genius API',
-                image: '../Assets/ProjectImages/Rythmix.png',
+                image: 'https://raw.githubusercontent.com/aarjjun/arjunanoop/refs/heads/main/Assets/ProjectImages/Rythmix.png',
                 tech: ['Python','Flask','JS','HTML'],
                 github: 'https://github.com/aarjjun/Rythmix',
                 demo: ''
