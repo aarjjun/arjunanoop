@@ -1,0 +1,55 @@
+/* Theme variables */
+:root {
+    /* Light theme */
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --bg-primary: #f9fafb;
+    --bg-secondary: #ffffff;
+    --card-bg: #ffffff;
+    --skill-gradient: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+    --card-border: rgba(0, 0, 0, 0.05);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    --primary: #818cf8;
+    --primary-hover: #6366f1;
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --card-bg: #1f2937;
+    --skill-gradient: linear-gradient(135deg, rgba(129, 140, 248, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    color: var(--primary);
+    transition: transform 0.5s ease;
+}

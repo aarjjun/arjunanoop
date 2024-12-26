@@ -1,0 +1,77 @@
+/* Form container */
+.form-container {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 320px; /* Smaller form width */
+    margin: 0 auto; /* Center the form horizontally */
+    text-align: center;
+  }
+  
+  /* Form layout */
+  .form-container form {
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    gap: 8px; /* Reduced space between form elements */
+  }
+  
+  /* Input and textarea styles */
+  .form-container input,
+  .form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 6px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; /* Slightly larger text */
+  }
+  
+  /* Placeholder styling */
+  .form-container input::placeholder,
+  .form-container textarea::placeholder {
+    color: #aaa;
+  }
+  
+  /* Button styling */
+  .form-container button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  .form-container button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Success and error messages */
+  .form-container .success-message,
+  .form-container .error-message {
+    font-size: 12px;
+    margin-top: 8px;
+    display: none;
+    text-align: center;
+  }
+  
+  .form-container .success-message {
+    color: green;
+  }
+  
+  .form-container .error-message {
+    color: red;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 400px) {
+    .form-container {
+      max-width: 90%; /* Form width on small screens */
+    }
+  }
+  
