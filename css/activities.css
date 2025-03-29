@@ -8,9 +8,10 @@
 
 .activities-carousel {
     position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;  /* Changed back to hidden */
+    padding: 2rem 4rem;
 }
 
 .activities-track {
@@ -18,6 +19,38 @@
     gap: 2rem;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 1rem;
+    margin: 0 auto;
+}
+
+.carousel-buttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 0 1rem;
+}
+
+.carousel-prev {
+    position: absolute;
+    left: 0;
+}
+
+.carousel-next {
+    position: absolute;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .activities-carousel {
+        padding: 0rem;
+        width: 103%;
+    }
+    
+    .activity-card {
+        min-width: calc(100vw - 4rem);
+    }
 }
 
 .activity-card {
@@ -78,12 +111,18 @@
 
 .carousel-buttons {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    pointer-events: none;
+    z-index: 10;
 }
 
 .carousel-button {
+    pointer-events: auto;
     background: white;
     border: none;
     width: 3rem;
@@ -95,6 +134,14 @@
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+}
+
+.carousel-prev {
+    left: 1rem;
+}
+
+.carousel-next {
+    right: 1rem;
 }
 
 .carousel-button:hover {

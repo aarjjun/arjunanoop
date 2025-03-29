@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/activities.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/project-modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -117,6 +118,32 @@
                     <div class="projects-track">
                         <!-- Projects will be inserted by JavaScript -->
                     </div>
+                    <div class="carousel-buttons">
+                        <button class="carousel-button carousel-prev">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button class="carousel-button carousel-next">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Modal container -->
+                <div class="project-modal">
+                    <div class="project-modal-content">
+                        <button class="modal-close">
+                            <i data-lucide="x"></i>
+                        </button>
+                        <div class="modal-gallery">
+                            <img class="gallery-main" alt="">
+                            <div class="gallery-thumbnails"></div>
+                        </div>
+                        <div class="modal-content">
+                            <h2 class="modal-title"></h2>
+                            <p class="modal-description"></p>
+                            <div class="modal-tech"></div>
+                            <div class="modal-links"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -198,8 +225,8 @@
 
     <script src="js/main.js"></script>
     <script src="js/navigation.js"></script>
-    <script src="js/projects.js"></script>
-    <script src="js/activities.js"></script>
+    <script type="module" src="js/projects.js"></script>
+    <script type="module" src="js/activities.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/skills.js"></script>
     

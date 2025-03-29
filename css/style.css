@@ -49,3 +49,16 @@ footer {
     padding: 2rem 0;
     text-align: center;
 }
+
+.projects-track,
+.activities-track {
+    user-select: none;
+    cursor: grab;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.projects-track:active,
+.activities-track:active {
+    cursor: grabbing;
+}
