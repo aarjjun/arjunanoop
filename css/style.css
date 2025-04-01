@@ -54,11 +54,73 @@ footer {
 .activities-track {
     user-select: none;
     cursor: grab;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    transition: transform 0.5s ease;
 }
 
-.projects-track:active,
-.activities-track:active {
+.activities-track:active, .projects-track:active {
     cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+    .carousel-prev, .carousel-next {
+        display: none !important;
+    }
+    
+    .activities-track, .projects-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .activity-card, .project-card {
+        scroll-snap-align: center;
+    }
+}
+
+@media (max-width: 725px) {
+    .projects-carousel,
+    .activities-carousel {
+        width: 100%;
+        overflow: visible;
+        margin: 0;
+    }
+
+    .projects-track,
+    .activities-track {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .project-card,
+    .activity-card {
+        flex: 0 0 85%;
+        min-width: 280px;
+        scroll-snap-align: start;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .activities-track {
+        margin: 0;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .activity-card {
+        flex: 0 0 90%;
+        margin-right: 1rem;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .activities-carousel {
+        overflow: hidden;
+        margin: 0 -1rem;  /* Negative margin to counter container padding */
+        padding: 0 1rem;  /* Add padding to carousel instead */
+    }
 }

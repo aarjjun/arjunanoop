@@ -1,5 +1,14 @@
 class CarouselBase {
+    constructor() {
+        this.animationID = null;
+    }
+
     setupCarouselNavigation(track, prevButton, nextButton, currentIndex) {
+        if (!track) {
+            console.error('Track element not found');
+            return;
+        }
+        
         if (!track || !prevButton || !nextButton) return;
 
         let isDragging = false;
@@ -26,8 +35,10 @@ class CarouselBase {
             return currentIndex;
         };
 
+        let animationID = null;  // Add this line to fix the undefined animationID
+        
         function touchStart(event) {
-            cancelAnimationFrame(animationID);
+            cancelAnimationFrame(animationID);  // Use the local variable
             isDragging = true;
             startPosition = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
             previousTranslate = currentTranslate;
@@ -69,5 +80,4 @@ class CarouselBase {
         return slideCards;
     }
 }
-
 export { CarouselBase };

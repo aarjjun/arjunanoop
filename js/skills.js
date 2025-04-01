@@ -28,18 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Update skill cards with progress bars
-    Object.entries(skills).forEach(([category, skillList]) => {
-        const card = document.querySelector(`.skill-card:has(h3:contains("${category}"))`);
-        if (card) {
-            const ul = card.querySelector('ul');
-            ul.innerHTML = skillList.map(skill => `
-                <li>
-                    ${skill.name}
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" style="--progress: ${skill.level}%"></div>
-                    </div>
-                </li>
-            `).join('');
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+        const heading = card.querySelector('h3');
+        if (heading) {
+            const category = heading.textContent.trim();
+            const skillList = skills[category];
+            if (skillList) {
+                const ul = card.querySelector('ul');
+                ul.innerHTML = skillList.map(skill => `
+                    <li>
+                        ${skill.name}
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: ${skill.level}%"></div>
+                        </div>
+                    </li>
+                `).join('');
+            }
         }
     });
 

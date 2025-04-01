@@ -101,3 +101,24 @@
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+
+.hero-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.hero-icons a {
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.hero-icons a:hover {
+    transform: translateY(-3px);
+    color: #00796b; /* Change to your preferred hover color */
+}
+
+.hero-icons .lucide {
+    width: 2rem;
+    height: 2rem;
+}

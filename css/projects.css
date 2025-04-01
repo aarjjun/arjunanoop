@@ -6,9 +6,10 @@
 .projects-carousel {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 3rem;
+    padding: 0 1rem;
     position: relative;
-    overflow: hidden; /* Add this to contain slides */
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
 }
 
 .projects-track {
@@ -17,7 +18,9 @@
     padding: 1rem 0;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    margin: 0 auto; /* Center the track */
+    margin: 0 auto;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
 }
 
 /* Update mobile styles */
@@ -34,7 +37,7 @@
     }
 
     .projects-track {
-        gap: 0rem;
+        gap: 1rem;
         padding: 0.5rem;
     }
 
@@ -161,53 +164,5 @@
 
     .project-description {
         font-size: 0.85rem;
-    }
-}
-
-/* Remove the conflicting carousel-nav and old button styles */
-.carousel-nav {
-    display: none;
-}
-
-/* Update the carousel buttons container */
-.projects .carousel-buttons {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    z-index: 20;
-    pointer-events: all;
-}
-
-/* Update button styles */
-.projects .carousel-button {
-    position: static;  /* Remove absolute positioning */
-    background: white;
-    border: none;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    pointer-events: auto;
-}
-
-.projects .carousel-button:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-    .projects-carousel {
-        padding: 1rem 0 4rem;
     }
 }

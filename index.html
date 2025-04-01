@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/project-modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-
+    <!-- Keep all other meta tags and CSS links -->
 </head>
 <body>
     <header class="header">
@@ -118,14 +118,6 @@
                     <div class="projects-track">
                         <!-- Projects will be inserted by JavaScript -->
                     </div>
-                    <div class="carousel-buttons">
-                        <button class="carousel-button carousel-prev">
-                            <i data-lucide="chevron-left"></i>
-                        </button>
-                        <button class="carousel-button carousel-next">
-                            <i data-lucide="chevron-right"></i>
-                        </button>
-                    </div>
                 </div>
                 <!-- Modal container -->
                 <div class="project-modal">
@@ -152,17 +144,9 @@
             <div class="container">
                 <h2>Recent Activities</h2>
                 <div class="activities-carousel">
-                    <div class="activities-track">
-                        <!-- Activities will be inserted by JavaScript -->
-                    </div>
-                    <div class="carousel-buttons">
-                        <button class="carousel-button carousel-prev">
-                            <i data-lucide="chevron-left"></i>
-                        </button>
-                        <button class="carousel-button carousel-next">
-                            <i data-lucide="chevron-right"></i>
-                        </button>
-                    </div>
+                   
+                    <div class="activities-track"></div>
+                   
                 </div>
             </div>
         </section>
@@ -173,6 +157,13 @@
                 <div class="contact-content">
                     <div class="contact-info">
                         <div class="info-item">
+                            <i data-lucide="phone"></i>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <p>Arjun A</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
                             <i data-lucide="mail"></i>
                             <div>
                                 <h3>Email</h3>
@@ -180,38 +171,34 @@
                             </div>
                         </div>
                         <div class="info-item">
-                            <i data-lucide="linkedin"></i>
-                            <div>
-                                <h3>LinkedIn</h3>
-                                <p><a href="https://www.linkedin.com/in/arjunanoop" target="_blank" aria-label="LinkedIn">Arjun Anoop</a></p>
-                            </div>
-                        </div>
-                        <div class="info-item">
                             <i data-lucide="map-pin"></i>
                             <div>
                                 <h3>Location</h3>
-                                <p>Asia,India</p>
+                                <p>Asia,India,Kerala</p>
                             </div>
                         </div>
                     </div>
                     <div class="form-container">
-                        <h1>Contact Me</h1>
+                        <h1>Send Us A Message</h1>
                         <form id="contact-form" action="https://formspree.io/f/xrbzgpoz" method="POST">
-                          <label for="name">Name:</label>
-                          <input type="text" id="name" name="name" required>
-                    
-                          <label for="email">Email:</label>
-                          <input type="email" id="email" name="_replyto" required>
-                    
-                          <label for="message">Message:</label>
-                          <textarea id="message" name="message" required></textarea>
-                    
-                          <button type="submit">Send Message</button>
-                    
-                          <div class="success-message" id="success-message">Your message has been sent successfully!</div>
-                          <div class="error-message" id="error-message">Oops! Something went wrong. Please try again later.</div>
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder=" " required>
+                                <label for="name">Your Name</label>
+                            </div>
+                        
+                            <div class="form-group">
+                                <input type="email" id="email" name="_replyto" placeholder=" " required>
+                                <label for="email">Your Email</label>
+                            </div>
+                        
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                        
+                            <button type="submit">Send Message</button>
                         </form>
-                      </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -223,10 +210,12 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- At the end of body, before closing </body> tag -->
+    <script type="module" src="js/main.js"></script>
     <script src="js/navigation.js"></script>
     <script type="module" src="js/projects.js"></script>
-    <script type="module" src="js/activities.js"></script>
+    <!-- At the end of body -->
+    <script src="js/activities.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/skills.js"></script>
     

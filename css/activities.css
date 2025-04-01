@@ -20,41 +20,29 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 1rem;
     margin: 0 auto;
+    overflow-x: auto; /* Keep scrolling enabled */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
 }
 
-.carousel-buttons {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: 10;
-    padding: 0 1rem;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.activities-track::-webkit-scrollbar {
+    display: none;
 }
 
-.carousel-prev {
-    position: absolute;
-    left: 0;
-}
-
-.carousel-next {
-    position: absolute;
-    right: 0;
-}
-
-@media (max-width: 768px) {
-    .activities-carousel {
-        padding: 0rem;
-        width: 103%;
-    }
-    
-    .activity-card {
-        min-width: calc(100vw - 4rem);
-    }
+.activities-carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2rem 0rem;
 }
 
 .activity-card {
-    min-width: 350px;
+    min-width: 380px;
+    scroll-snap-align: start; /* Snap to start of each card */
     background: white;
     border-radius: 1rem;
     overflow: hidden;
@@ -73,6 +61,33 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    background: #f0f0f0;
+    transition: opacity 0.3s ease;
+    will-change: transform, opacity; /* Optimize animations */
+}
+
+/* Add this to prevent layout shifts */
+.activity-card {
+    aspect-ratio: 1 / 1.2;
+}
+
+.activity-image.loading {
+    opacity: 0;
+}
+
+.activity-image.loaded {
+    opacity: 1;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.activity-card.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
 }
 
 .activity-content {
@@ -149,4 +164,19 @@
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Add these to existing styles */
+.activity-card:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.carousel-button:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.activity-image {
+    aspect-ratio: 16/9; /* Maintain consistent image ratio */
 }
