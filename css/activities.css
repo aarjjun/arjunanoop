@@ -21,7 +21,7 @@
     padding: 1rem;
     margin: 0 auto;
     overflow-x: auto; /* Keep scrolling enabled */
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
@@ -42,7 +42,7 @@
 
 .activity-card {
     min-width: 380px;
-    scroll-snap-align: start; /* Snap to start of each card */
+    scroll-snap-align: center; /* Snap to center of each card */
     background: white;
     border-radius: 1rem;
     overflow: hidden;
